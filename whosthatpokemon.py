@@ -139,51 +139,12 @@ else:
 
 
 
-# name, weight, hitpoint at level 0
-
-#print(mypokemon[0].name)
-#print ("the")
-#print(mypokemon[0].types[0].type.name)
-#print ("type Pokemon.")
-
-#print("weights")
-#print(mypokemon[0].weight)
-#print("and is")
-#print(mypokemon[0].height)
-#print("tall")
-
-
-#hp
-#print(mypokemon[0].stats[0].stat.name)
-#print(mypokemon[0].stats[0].base_stat)
-#attack
-#print(mypokemon[0].stats[1].stat.name)
-#print(mypokemon[0].stats[1].base_stat)
-#defense
-#print(mypokemon[0].stats[2].stat.name)
-#print(mypokemon[0].stats[2].base_stat)
-#special-attack
-#print(mypokemon[0].stats[3].stat.name)
-#print(mypokemon[0].stats[3].base_stat)
-#special-defense
-#print(mypokemon[0].stats[4].stat.name)
-#print(mypokemon[0].stats[4].base_stat)
-#speed
-#print(mypokemon[0].stats[5].stat.name)
-#print(mypokemon[0].stats[5].base_stat)
-
-
 #specials
 #for i in range(0,10):
 #    print(mypokemon[0].moves[i].move.name)
-
 moves = mypokemon[0].moves
 #print(Counter(moves))
 
-#def darken(image, amount=255):
-#    dark = pygame.Surface(image.get_size(),16)
-#    dark.fill((amount,amount,amount))
-#    dark.blit(image, (0,0), None, pygame.BLEND_SUB)
 
 def alphabinarization(abcopy):
     white = (255, 255, 255)
@@ -381,35 +342,19 @@ print(otherpokemon.name)
 #set icon 
 pygame.display.set_icon(imagefront)
 
-#sets the first pic they see when screen turn on?
-#pic = cv2.imdecode(imagefront, cv2.IMREAD_UNCHANGED)
-#_, mask = cv2.threshold(im[:, :, 3], 0, 255, cv2.THRESH_BINARY)
-#pic = cv2.imshow(mask)
-
-#imagefront = pygame.image.load("pacman.png")
 print("converting....")
 pic = alphabinarization(imagefront)
 screen.fill((255, 255, 255))
 screen.blit(pygame.transform.scale(pic, screen.get_size()), (0, 0))
 pygame.display.update()
-#print("looping")
-#while 1:
-#    pass
-#pic =imagefront
-
-#import Image
-
-#img = Image.open(pic)
 
 
 whosthatpokemonsound = pygame.mixer.music.load("whoisthat.wav")
 itssound = pygame.mixer.Sound('its.wav')
 
 pygame.mixer.music.play()
-#whosthatpokemonsound.play()
 
-#battlestart = pygame.mixer.Sound('battlestart.wav')
-#battlestart.play()
+#main loop
 running = True
 while running:
     
@@ -433,14 +378,16 @@ while running:
         screen_width,screen_height = pygame.display.get_window_size()
         cardinals = Quadrants(screen_width,screen_height)
         pygame.display.update()
+    if event.type == pygame.KEYDOWN:
+        pass
+    if event.type == pygame.KEYUP
+        pass
+
     if event.type == pygame.JOYBUTTONDOWN:
         print("Joystick button pressed.")
         whichone = pygame.joystick.Joystick(0).get_button
         if whichone(0):
             print("button 0")
-            pic = otherpokemon.imageback
-            screen.fill((255, 255, 255))
-            screen.blit(pygame.transform.scale(pic, screen.get_size()), (0, 0))
             pygame.display.update()
             
         if whichone(1):
@@ -495,20 +442,15 @@ while running:
         whichone = pygame.joystick.Joystick(0).get_button
         #print("Joystick button released.")
         if whichone(0):
-            pass #print("button 0") #POKEMON ROAR
-            #pic = imagefront
-            #screen.fill((0, 0, 0))
-            #screen.blit(pygame.transform.scale(pic, screen.get_size()), (0, 0))
-            #pygame.display.update()
+            pass 
         if whichone(1):
-            pass #print("button 1") PIKACHU, I CHOOSE YOU!
+            pass 
         if whichone(2):
-            pass #print("button 2") SPEAK DATA ABOUT POKEMON
+            pass 
         if whichone(3):
-            pass #print("button 3") KILL or HEAL ?    / EVOLVE!!!
+            pass 
 
-    if joystick_count != 0:
- 
+    if joystick_count != 0: 
         # This gets the position of the axis on the game controller
         # It returns a number between -1.0 and +1.0
         horiz_axis_pos = my_joystick.get_axis(0)
@@ -526,7 +468,3 @@ while running:
 
     
     pygame.display.update()
-        # Move x according to the axis. We multiply by 10
-        # to speed up the movement.
-       # x_coord = x_coord + int(horiz_axis_pos * 10)
-       # y_coord = y_coord + int(vert_axis_pos * 10)  
