@@ -3,18 +3,19 @@
 <h>Who's that Pokemon?!</h>
 <br>
 requires: python3, pygame, pokepy
+<br>
 <code>
 >pip install pygame
 </code>
-
+<br>
 <code>
 >pip install pokepy
 </code>
-
+<br>
 <code>
 >git clone https://github.com/astrobleem/whosthatpokemon.git
 </code>
-
+<br>
 usage:
 <code>
 >python3 whosthatpokemon.py
