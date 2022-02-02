@@ -1,5 +1,5 @@
 # Who's that Pokemon?!
-
+Pokémon and Pokémon character names are trademarks of Nintendo.
 
 requires: python3, pygame, pokepy
 
