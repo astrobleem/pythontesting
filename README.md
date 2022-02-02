@@ -30,7 +30,7 @@ fourth: change into the directory, and then exectute the application<br>
 <br><br><br>
 This python application, when executed:
 
-<li> graphical display of a shadowed pokemon, and plays the "whos that pokemon?! music from the cartoon.</li>
+<li> graphical display of a random shadowed pokemon, and plays the "whos that pokemon?! music from the cartoon.</li>
 <li> waits for you to press a button, and then it records your speech for a few seconds.</li>
 <li> speech is transscribed to text </li>
 <li> transscribed speech is compared to actual pokemon name and a visual indicator of failure or success will appear.</li>
