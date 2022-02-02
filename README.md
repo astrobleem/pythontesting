@@ -20,8 +20,6 @@ then compares your spoken text to the answer to let you know if you got it right
 it also shows you who the pokemon is anyway
 and then it will speak and display some pokedex information about that pokemon.
 
-
-<img src "kinglerreveal.png">
 ![pokemon hidden](https://github.com/astrobleem/pythontesting/blob/main/examplewindowkingler.png?raw=true)
 <br>
 ![pokemon is revealed after hitting spacebar](https://github.com/astrobleem/pythontesting/blob/main/kinglerreveal.png?raw=true)
