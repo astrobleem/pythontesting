@@ -332,9 +332,14 @@ mypokemon[0].moves,
 abilities,
 mypokemon[0].sprites#spriteurls
 )
-print("the object:")
+print("...It's " + otherpokemon.name + "!")
 print(otherpokemon.name)
 #print(otherpokemon.hp)
+print("You said: ")
+#if theirspeech = returnedtransscription:
+#    print("you were right")
+#elseif:
+#    print("you were wrong")
 
 #otherpokemon.printStats()
 #otherpokemon.listMoves()
