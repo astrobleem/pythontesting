@@ -2,9 +2,17 @@
 
 <h>Who's that Pokemon?!</h>
 <br>
-requires: python3, pygame
+requires: python3, pygame, pokepy
 <code>
 >pip install pygame
+</code>
+
+<code>
+>pip install pokepy
+</code>
+
+<code>
+>git clone https://github.com/astrobleem/whosthatpokemon.git
 </code>
 
 usage:
