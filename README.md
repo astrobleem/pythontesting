@@ -14,3 +14,4 @@ and the pygame wrapper https://github.com/PokeAPI/pokepy
 <br>
 and some sounds from the television cartoon program
 <br>
+<img src "kinglerreveal.png">
