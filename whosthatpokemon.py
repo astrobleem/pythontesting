@@ -1,6 +1,7 @@
 #chadpokemon
-#speaking pokedex
+#speaking pokedex test change
 
+#imports
 import pokepy
 import pygame
 from pygame.locals import *
@@ -23,25 +24,20 @@ import cv2
 import pyttsx3
 
 
+#constants
 
+
+
+#variables
+whichone = random.randrange(1,200)
+
+#initalization stuff
 engine = pyttsx3.init()
-
-white = (255, 255, 255)
-black = (0, 0, 0)
-
 client = pokepy.V2Client()
 
-whichone = random.randrange(1,200)
-#load pokemon object
-mypokemon = client.get_pokemon(whichone)
-abilities = client.get_ability(whichone)
-species = client.get_pokemon_species(whichone)
 
 
-
-
-
-
+#load pokemon class object
 #get_pokemon
 #get_move
 #get_sprite
@@ -49,20 +45,16 @@ species = client.get_pokemon_species(whichone)
 #get_game
 #get_type
 #get_egg
-#create sprite url list object
+
+#create sprite url list object from api
+mypokemon = client.get_pokemon(whichone)
+abilities = client.get_ability(whichone)
+species = client.get_pokemon_species(whichone)
+
 sprites = mypokemon[0].sprites
-
-#urlData = 'https://pokeapi.co/api/v2/ability/' + str(whichone)
-#x = requests.get(urlData)
-#print(x)
-
-#abilites = urlopen('https://pokeapi.co/api/v2/ability/' )
-
-#pick one from the list and load it into response
-#response = requests.get(sprites.back_default)
-
 image_str = urlopen(sprites.back_default).read()
 image_file = io.BytesIO(image_str)
+
 #load into pygame probably needs to be transformed to a fraction of the size of the screen
 imageback = pygame.image.load(image_file)
 
@@ -74,9 +66,6 @@ imagefront = pygame.image.load(image_file)
 #copy image onto our surface upper left hand corner, will need to
 # work out where it belongs based on p1 or p2 and if need to flip or not
 #screen.blit(image, (0,0))
-
-
-
 
 
 class Quadrants():
@@ -101,11 +90,6 @@ class Quadrants():
         self.yh = self.y / 2
 
 
-
-
-
-#oohh you're my best friend in a world we can defend... pokemon gotta catch em all tune  plays
-
 def clear():
     if name == 'nt':
         _ = system('cls')
@@ -127,7 +111,7 @@ def get_caller_info():
 
 pygame.init()
 filename,title = get_caller_info()
-# title = 'Corn vs Pacman'
+title = "Who's that Pokemon?"
 clock = pygame.time.Clock()
 fps = 30
 
@@ -141,26 +125,19 @@ screen = pygame.display.set_mode((x,y), RESIZABLE)
 pygame.display.set_caption(title)
 
 
-#pic = pygame.image.load("burningfield.png")  # You need an example picture in the same folder as this file!
-#pic = imagefront
-#image = pygame.image.load(response)
-#screen.blit(image, (0,0))
-
-
-
-#battlestart = pygame.mixer.Sound('battlestart.wav')
-#battlestart.play()
-
 # Count the joysticks the computer has
 joystick_count = pygame.joystick.get_count()
 if joystick_count == 0:
     # No joysticks!
     print("Error, I didn't find any joysticks.")
+    joysticks = None
 else:
     # Use joystick #0 and initialize it
     my_joystick = pygame.joystick.Joystick(0)
     my_joystick.init()
-#battlestart.play()
+
+
+
 
 # name, weight, hitpoint at level 0
 
@@ -209,15 +186,14 @@ moves = mypokemon[0].moves
 #    dark.blit(image, (0,0), None, pygame.BLEND_SUB)
 
 def alphabinarization(abcopy):
+    white = (255, 255, 255)
+    black = (0, 0, 0)
     abcopy = abcopy.convert_alpha()
     blackcolormask = (0,0,0,1)
     whitecolormask = (255,255,255,1)
     transparentmask = (255,255,255,0)
     abwidth, abheight = abcopy.get_size()
     print("about to convert an image" + str((abwidth, abheight)))
-    
-    #print(width)
-    #print(height)
     abpixelx = 0
     abpixely = 0
 
@@ -228,22 +204,13 @@ def alphabinarization(abcopy):
             #if it's transparent, leave it alone (x,x,x,0)
             #if it's not transparent, make it black (0,0,0,1)
             whatshere = abcopy.get_at((abpixelx, abpixely))
-            #print(whatshere[3])
-            #if (whatshere[0] == 255) and (whatshere[1] == 255) (whatshere[2] == 255) and (whatshere[3] > 0):
-            #if (whatshere[0] == 255):
-                # 0 is transparent 255 is visible
-
-            #    pass
-                #abcopy.set_at((abpixelx,abpixely),(transparentmask))
-                #print("changing white pixels transparent")
-
+            
             if whatshere[3] >= 0.1:
-                #print((abpixelx,abpixely))
-                #print ("changing")
+                #"changing other colored pixels to black"
                 abcopy.set_at((abpixelx,abpixely),(0,0,0,255))
-                #print("changing other colored pixels to black")
-                #pass
-    #print("done")
+                
+                
+    
     #screen.blit(pygame.transform.scale(mypic, screen.get_size()), (0, 0))
     return abcopy 
             
