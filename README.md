@@ -1,5 +1,5 @@
 # Who's that Pokemon?!
-Pokémon and Pokémon character names are trademarks of Nintendo.
+
 
 requires: python3, pygame, pokepy
 
@@ -50,6 +50,7 @@ This python application, when executed:
 
 This is just for fun. A demonstration of my understanding of python and how to work with information from an API.
 Please don't sue me, Nintendo, or the pokemon company!
+Pokémon and Pokémon character names are trademarks of Nintendo.
 
 <br>
 retreives assets from https://pokeapi.co/
