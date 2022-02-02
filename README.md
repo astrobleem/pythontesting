@@ -29,14 +29,14 @@ fourth: change into the directory, and then exectute the application<br>
 </code>
 <br><br><br>
 This python application, when executed:
-<li>
-1. graphical display of a shadowed pokemon, and plays the "whos that pokemon?! music from the cartoon.
-2. waits for you to press a button, and then it records your speech for a few seconds.
-3. speech is transscribed to text 
-4. transscribed speech is compared to actual pokemon name and a visual indicator of failure or success will appear.
-5. the shadowed pokemon silohette is revealed.
-6. some speech is generated containing the name of the pokemon, the type of the pokemon, and a random "flavor" fact about that pokemon.
-</li>
+
+<ul>1. graphical display of a shadowed pokemon, and plays the "whos that pokemon?! music from the cartoon.</ul>
+<ul>2. waits for you to press a button, and then it records your speech for a few seconds.</ul>
+<ul>3. speech is transscribed to text </ul>
+<ul>4. transscribed speech is compared to actual pokemon name and a visual indicator of failure or success will appear.</ul>
+<ul>5. the shadowed pokemon silohette is revealed.</ul>
+<ul>6. some speech is generated containing the name of the pokemon, the type of the pokemon, and a random "flavor" fact about that pokemon.</ul>
+
 
 
 
