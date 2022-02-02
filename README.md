@@ -2,12 +2,16 @@
 
 <h>Who's that Pokemon?!</h>
 <br>
-requires: pygame
+requires: python3, pygame
 <code>
 >pip install pygame
 </code>
 
-
+usage:
+<code>
+>python3 whosthatpokemon.py
+</code>
+<br>
 uses assets from https://pokeapi.co/
 <br>
 and the pygame wrapper https://github.com/PokeAPI/pokepy
