@@ -346,18 +346,27 @@ print("You said: ")
 
 #set icon 
 pygame.display.set_icon(imagefront)
+poffsetx,poffsety = screen.get_size()
+poffsetx = (poffsetx * -0.2)
 
+print(screen.get_size())
 print("converting....")
 pic = alphabinarization(imagefront)
 screen.fill((255, 255, 255))
-screen.blit(pygame.transform.scale(pic, screen.get_size()), (0, 0))
+backgroundimage = pygame.image.load("background.png")
+screen.blit(pygame.transform.scale(backgroundimage, screen.get_size()), (0, 0))
+screen.blit(pygame.transform.scale(pic, screen.get_size()), (poffsetx,0))
 pygame.display.update()
+
 
 
 whosthatpokemonsound = pygame.mixer.music.load("whoisthat.wav")
 itssound = pygame.mixer.Sound('its.wav')
 
 pygame.mixer.music.play()
+
+#screen.fill((255, 255, 255))
+#screen.blit(pygame.transform.scale(backgroundimage, screen.get_size()), (0, 0))
 
 #main loop
 running = True
@@ -371,7 +380,8 @@ while running:
     if event.type == QUIT:
         running = False
     elif event.type == VIDEORESIZE:
-        screen.blit(pygame.transform.scale(pic, event.dict['size']), (0, 0))
+        screen.blit(pygame.transform.scale(backgroundimage, screen.get_size()), (0, 0))
+        screen.blit(pygame.transform.scale(pic, event.dict['size']), (poffsetx, 0))
         newsize = screen.get_size()
         print(newsize)
         screen_width,screen_height = pygame.display.get_window_size()
@@ -379,7 +389,8 @@ while running:
         pygame.display.update()
     elif event.type == VIDEOEXPOSE:  # handles window minimising/maximising
         screen.fill((255, 255, 255))
-        screen.blit(pygame.transform.scale(pic, screen.get_size()), (0, 0))
+        screen.blit(pygame.transform.scale(backgroundimage, screen.get_size()), (0, 0))
+        screen.blit(pygame.transform.scale(pic, screen.get_size()), (poffsetx, 0))
         screen_width,screen_height = pygame.display.get_window_size()
         cardinals = Quadrants(screen_width,screen_height)
         pygame.display.update()
@@ -398,7 +409,8 @@ while running:
         if whichone(1):
             pic = otherpokemon.imagefront
             screen.fill((255, 255, 255))
-            screen.blit(pygame.transform.scale(pic, screen.get_size()), (0, 0))
+            screen.blit(pygame.transform.scale(backgroundimage, screen.get_size()), (0, 0))
+            screen.blit(pygame.transform.scale(pic, screen.get_size()), (poffsetx, 0))
             pygame.display.update()
             #pass #print("button 1")
             
@@ -427,7 +439,7 @@ while running:
             pass #print("button 3")
         imagefront = otherpokemon.imagefront
         pic = imagefront
-        screen.blit(pygame.transform.scale(pic, screen.get_size()), (0, 0))
+        screen.blit(pygame.transform.scale(pic, screen.get_size()), (poffsetx, 0))
         itssound.play()
         sleep(1)
         pygame.display.update()
