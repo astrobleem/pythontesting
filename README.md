@@ -1,24 +1,47 @@
-# pythontesting
+# Who's that Pokemon?!
 
-<h>Who's that Pokemon?!</h>
+
+requires: python3, pygame, pokepy
+
 <br>
-requires: pygame
+first: add pygame module with pip<br>
 <code>
 >pip install pygame
 </code>
 
+<br>
+second: add pokepy module with pip<br>
+<code>
+>pip install pokepy
+</code>
 
-uses assets from https://pokeapi.co/
 <br>
-and the pygame wrapper https://github.com/PokeAPI/pokepy
+third: clone this repository<br>
+<code>
+>git clone https://github.com/astrobleem/whosthatpokemon.git
+</code>
+
 <br>
-and some sounds from the television cartoon program
+fourth: change into the directory, and then exectute the application<br>
+<code>
+
+    cd whosthatpokemon
+    python3 whosthatpokemon.py
+</code>
+<br><br><br>
+This python application, when executed:
+
+<li> graphical display of a random shadowed pokemon, and plays the "whos that pokemon?! music from the cartoon.</li>
+<li> waits for you to press a button, and then it records your speech for a few seconds.</li>
+<li> speech is transscribed to text </li>
+<li> transscribed speech is compared to actual pokemon name and a visual indicator of failure or success will appear.</li>
+<li> the shadowed pokemon silohette is revealed.</li>
+<li> some speech is generated containing the name of the pokemon, the type of the pokemon, and a random "flavor" fact about that pokemon.</li>
+
+
+
+<h1>Screenshots:</h1>
 <br>
-Shows you a shadowed pokemon, when you press a button it records your speech
-then transcribes your speech to text
-then compares your spoken text to the answer to let you know if you got it right or wrong.
-it also shows you who the pokemon is anyway
-and then it will speak and display some pokedex information about that pokemon.
 
 ![pokemon hidden](https://github.com/astrobleem/pythontesting/blob/main/examplewindowkingler.png?raw=true)
 <br>
@@ -27,3 +50,12 @@ and then it will speak and display some pokedex information about that pokemon.
 
 This is just for fun. A demonstration of my understanding of python and how to work with information from an API.
 Please don't sue me, Nintendo, or the pokemon company!
+Pokémon and Pokémon character names are trademarks of Nintendo.
+
+<br>
+retreives assets from https://pokeapi.co/
+<br>
+and the pygame wrapper https://github.com/PokeAPI/pokepy
+<br>
+and some sounds from the television cartoon program
+<br>
