@@ -380,7 +380,7 @@ while running:
         pygame.display.update()
     if event.type == pygame.KEYDOWN:
         pass
-    if event.type == pygame.KEYUP
+    if event.type == pygame.KEYUP:
         pass
 
     if event.type == pygame.JOYBUTTONDOWN:
