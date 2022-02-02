@@ -29,7 +29,7 @@ fourth: change into the directory, and then exectute the application<br>
 </code>
 <br><br><br>
 This python application, when executed:
-1. graphical display of a shadowed pokemon, and plays the "whos that pokemon music from the cartoon"
+1. graphical display of a shadowed pokemon, and plays the "whos that pokemon?! music from the cartoon.
 2. waits for you to press a button, and then it records your speech for a few seconds.
 3. speech is transscribed to text 
 4. transscribed speech is compared to actual pokemon name and a visual indicator of failure or success will appear.
