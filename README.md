@@ -24,8 +24,9 @@ third: clone this repository<br>
 <br>
 fourth: change into the directory, and then exectute the application<br>
 <code>
->cd whosthatpokemon
->python3 whosthatpokemon.py
+
+    cd whosthatpokemon
+    python3 whosthatpokemon.py
 </code>
 <br><br><br>
 This python application, when executed:
