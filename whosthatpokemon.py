@@ -145,6 +145,21 @@ else:
 moves = mypokemon[0].moves
 #print(Counter(moves))
 
+def showme():
+    imagefront = otherpokemon.imagefront
+    pic = imagefront
+    screen.blit(pygame.transform.scale(pic, screen.get_size()), (poffsetx, 0))
+    itssound.play()
+    sleep(1)
+    pygame.display.update()
+
+def tellme():
+    sayit = mypokemon[0].name + " ... " + mypokemon[0].name + " the " + mypokemon[0].types[0].type.name + " type Pokemon."
+    engine.say(sayit)
+    engine.runAndWait()
+    sleep(1)
+    
+    
 
 def alphabinarization(abcopy):
     white = (255, 255, 255)
@@ -154,7 +169,7 @@ def alphabinarization(abcopy):
     whitecolormask = (255,255,255,1)
     transparentmask = (255,255,255,0)
     abwidth, abheight = abcopy.get_size()
-    print("about to convert an image" + str((abwidth, abheight)))
+    #print("about to convert an image" + str((abwidth, abheight)))
     abpixelx = 0
     abpixely = 0
 
@@ -308,15 +323,7 @@ class Pokemon():
         
 
 
-#requires name,kind,height,weight,speed,maxhp,attack,defense,spattack,spdefense,spriteurls
-#armor class and character traits
-#good or evil
-#benefit or negative character trait
-#resistance to poision
-#3 positions for character traits
-#one pos == nightvision, (more moves per turn hastening),
-#one neg == colorblind  [also not cancel out]
-#one from either list neg or pos [can not have already been using]
+
 otherpokemon = Pokemon(
 mypokemon[0].name, #name
 mypokemon[0].types[0].type.name, #type
@@ -332,10 +339,12 @@ mypokemon[0].moves,
 abilities,
 mypokemon[0].sprites#spriteurls
 )
+print("I'll tell you a secret!")
 print("...It's " + otherpokemon.name + "!")
-print(otherpokemon.name)
+#print(otherpokemon.name)
+
 #print(otherpokemon.hp)
-print("You said: ")
+#print("You said: ")
 #if theirspeech = returnedtransscription:
 #    print("you were right")
 #elseif:
@@ -349,8 +358,8 @@ pygame.display.set_icon(imagefront)
 poffsetx,poffsety = screen.get_size()
 poffsetx = (poffsetx * -0.2)
 
-print(screen.get_size())
-print("converting....")
+#print(screen.get_size())
+#print("converting....")
 pic = alphabinarization(imagefront)
 screen.fill((255, 255, 255))
 backgroundimage = pygame.image.load("background.png")
@@ -370,6 +379,7 @@ pygame.mixer.music.play()
 
 #main loop
 running = True
+told = 0
 while running:
     
     #pygame.display.update()
@@ -397,7 +407,14 @@ while running:
     if event.type == pygame.KEYDOWN:
         pass
     if event.type == pygame.KEYUP:
-        pass
+        if told == 0: 
+            showme()
+            tellme()
+            otherpokemon.printStats()
+            otherpokemon.speakFlavor()      
+            
+            told = told + 1
+        
 
     if event.type == pygame.JOYBUTTONDOWN:
         print("Joystick button pressed.")
@@ -416,42 +433,12 @@ while running:
             
         if whichone(2):
             print(otherpokemon.name)
-            #pickone = random.randrange(1,200)
-            #load pokemon object
-            #mypokemon = client.get_pokemon(pickone)
-            #abilities = client.get_ability(pickone)
-            #otherpokemon = Pokemon(mypokemon[0].name,mypokemon[0].types[0].type.name,mypokemon[0].height,mypokemon[0].weight,mypokemon[0].stats[5].base_stat,mypokemon[0].stats[0].base_stat,mypokemon[0].stats[1].base_stat,mypokemon[0].stats[2].base_stat,mypokemon[0].stats[3].stat.name,mypokemon[0].stats[4].stat.name,mypokemon[0].moves,abilities,mypokemon[0].sprites)
-            #otherpokemon.getImages()
-            #pic = otherpokemon.imagefront
-            #screen.fill((255, 255, 255))
-            #screen.blit(pygame.transform.scale(pic, screen.get_size()), (0, 0))
             
-            #pic = alphabinarization(imagefront)
-            #screen.fill((255, 255, 255))
-            #screen.blit(pygame.transform.scale(pic, screen.get_size()), (0, 0))
-            
-            #pygame.display.update()
-            #print("button 2")
-            #print(otherpokemon.name)
-            #new pokemon loaded u need to mask him again
 
         if whichone(3):
             pass #print("button 3")
-        imagefront = otherpokemon.imagefront
-        pic = imagefront
-        screen.blit(pygame.transform.scale(pic, screen.get_size()), (poffsetx, 0))
-        itssound.play()
-        sleep(1)
-        pygame.display.update()
-        sayit = mypokemon[0].name + " ... " + mypokemon[0].name + " the " + mypokemon[0].types[0].type.name + " type Pokemon."
-        engine.say(sayit)
-        engine.runAndWait()
-        sleep(1)
-        
-        otherpokemon.speakFlavor()
-        
-        otherpokemon.printStats()
 
+        
             
 
 
@@ -479,7 +466,7 @@ while running:
         
         if horiz_axis_pos > 0.09:
             pass #print (horiz_axis_pos, vert_axis_pos)
-            print ("right") #increment pokemon
+            #print ("right") #increment pokemon
 
         
 
