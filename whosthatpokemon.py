@@ -149,15 +149,13 @@ def showme():
     imagefront = otherpokemon.imagefront
     pic = imagefront
     screen.blit(pygame.transform.scale(pic, screen.get_size()), (poffsetx, 0))
-    itssound.play()
-    sleep(1)
     pygame.display.update()
 
 def tellme():
     sayit = mypokemon[0].name + " ... " + mypokemon[0].name + " the " + mypokemon[0].types[0].type.name + " type Pokemon."
     engine.say(sayit)
     engine.runAndWait()
-    sleep(1)
+    
     
     
 
@@ -409,6 +407,8 @@ while running:
     if event.type == pygame.KEYUP:
         if told == 0: 
             showme()
+            itssound.play()
+            sleep(1)
             tellme()
             otherpokemon.printStats()
             otherpokemon.speakFlavor()      
